@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+</head>
+<style type="text/css">
+    body{margin:20px auto; padding:0; width:800px; }
+    canvas{border:dashed 2px #CCC}
+</style>
+<script type="text/javascript">
+    function $$(id){
+        return document.getElementById(id);
+    }
+    function pageLoad(){
+        var can = document.createElement('canvas');
+        var body = document.body;
+
+        body.appendChild(can);
+
+        can.width=500;
+        can.height=190;
+        can.style.display='none';
+
+
+        var cans = can.getContext('2d');
+        cans.rotate(-20*Math.PI/180);
+        cans.font = "24px Microsoft JhengHei";
+        cans.fillStyle="#ccc";
+
+        cans.fillText('潘婷', 0, 200);
+        cans.font = "24px Microsoft JhengHei";
+        cans.fillText('试运行版', 150,200);
+        cans.fillStyle="#ccc";
+
+        cans.font = "24px Microsoft JhengHei";
+        cans.fillStyle="#ccc";
+        cans.fillText('0000080149', 300,200);
+
+        var body = document.body;
+        body.style.backgroundImage="url("+can.toDataURL("image/png")+")";
+    }
+</script>
+<body onload="pageLoad();">
+</body>
+</html>
